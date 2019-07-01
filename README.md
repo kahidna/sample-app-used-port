@@ -18,7 +18,7 @@ if you want to deploy multiple container, you can use docker-compose with follow
 - check the docker-compose.yml file the defined port and container number on html page.
 - then execute command `docker-compose up -d`
 
-after that, check using `docker ps`, see the exposed port. and then access IP:[exposed_port] using browser
+after that, check using `docker ps`, see the exposed port. and then access **http://IP:[exposed_port]** using browser
 
 # known issue 
 not existed yet, please tell me on issue page.
