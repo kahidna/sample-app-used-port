@@ -1,4 +1,4 @@
-# SAMPLE DYNAMIC AND STATIC LOAD BALANCING
+# SAMPLE DYNAMIC AND STATIC LOAD BALANCE
 
 this repository purpose to show the implementation load balancing static/manually defined on nginx service, and dynamic load balancing which
 defined using single service on docker-compose and then scaled using docker-compose command
