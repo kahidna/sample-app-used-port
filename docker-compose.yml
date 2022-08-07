@@ -6,26 +6,43 @@ services:
       context: ./
     image: sample-port-app
     container_name: app1
-    ports: ["3000"]
     environment :
      - NODENUMBER=1
     hostname: app1
     networks:
-     sample-app-used-port:
-      ipv4_address: 172.10.213.2
+     - sample-app-used-port
 
    app2:
     build :
       context: ./
     image: sample-port-app
-    container_name: app2
-    ports: ["3000"]
     environment :
      - NODENUMBER=2
     hostname: app2
     networks:
-     sample-app-used-port:
-      ipv4_address: 172.10.213.3
+     - sample-app-used-port
+
+   auto-app:
+    build :
+      context: ./
+    image: sample-port-app
+    environment :
+     - NODENUMBER=auto-node
+    networks:
+     - sample-app-used-port
+
+
+   nginx:
+    image: nginx:1.17
+    volumes:
+      - ./nginx-conf.d:/etc/nginx/conf.d
+    depends_on:
+      - app1
+      - app2
+    ports:
+      - "80:80"
+    networks:
+      - sample-app-used-port
 
 networks:
  sample-app-used-port:
