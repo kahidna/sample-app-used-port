@@ -8,7 +8,6 @@ defined using single service on docker-compose and then scaled using docker-comp
 - docker-compose
 
 # deployment
-if you s
 - clone this repo 
 - modify variable NODENUMBER to identify container for app1 and app2 for manual load balancing
 - change the server_name also on nginx config for certain domain
