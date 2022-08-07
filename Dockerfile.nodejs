@@ -1,0 +1,13 @@
+FROM nodejs:16.16
+
+ENV APPDIR="/root/app"
+
+RUN mkdir -vp $APPDIR && cd $APPDIR && npm install express --save
+
+COPY entrypoint.sh /
+
+RUN chmod +x entrypoint.sh
+
+EXPOSE 3000
+
+CMD ["./entrypoint.sh"]
