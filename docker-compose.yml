@@ -33,6 +33,7 @@ services:
 
    nginx:
     image: nginx:1.17
+    container_name: loadbalancer
     volumes:
       - ./nginx-conf.d:/etc/nginx/conf.d
     depends_on:
