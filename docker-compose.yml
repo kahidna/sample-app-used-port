@@ -13,9 +13,8 @@ services:
      - sample-app-used-port
 
    app2:
-    build :
-      context: ./
     image: sample-port-app
+    container_name: app2
     environment :
      - NODENUMBER=2
     hostname: app2
@@ -51,4 +50,4 @@ networks:
   ipam:
    driver: default
    config: 
-     - subnet: 172.10.213.0/24
+     - subnet: 172.18.213.0/24
